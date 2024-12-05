@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Django.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Django_db', # Имя базы данных
+        'USER': 'postgres', # Пользователь PostgreSQL
+        'PASSWORD': 'P23580800p', # Пароль PostgreSQL
+        'HOST': 'localhost', # Адрес сервера базы данных
+        'PORT': '5432', # Порт подключения
     }
 }
 

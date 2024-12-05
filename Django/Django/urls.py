@@ -21,4 +21,6 @@ from testapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
+    path('table_new/', views.table),
+    path('test_table/', views.test),
 ]

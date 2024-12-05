@@ -1,0 +1,56 @@
+python manage.py shell
+from testapp.models import Post
+>>> posts = Post.objects.all()
+>>> for post in posts:
+...     print(post.title)
+...
+Post_1
+Post_2
+Post_3
+Post_4
+Post_5
+Post_6
+Post_7
+Post_8
+>>>
+
+>>> from testapp.models import Post
+>>> posts = Post.objects.order_by('-created_at')
+>>> for post in posts:
+...     print(post.created_at)
+...
+2024-12-04 15:44:18.993569+00:00
+2024-12-04 15:43:57.451855+00:00
+2024-12-04 15:43:40.942605+00:00
+2024-12-04 15:43:21.337535+00:00
+2024-12-04 15:43:02.557901+00:00
+2024-12-04 15:42:41.566503+00:00
+2024-12-04 15:42:22.465927+00:00
+2024-12-04 15:42:00.684101+00:00
+>>>
+
+python manage.py shell
+>>> from testapp.models import *
+>>> tests = Table_New.objects.all()
+>>> for test in tests:
+...     print(test.name)
+...
+new test 2
+new test 3
+new test 1
+>>>
+>>> Table_New.objects.create(name='new test 4')
+<Table_New: new test 4>
+>>> Table_New.objects.create(name='new test 5') 
+<Table_New: new test 5>
+
+>>> test = Table_New.objects.get(id=2)
+>>> test.delete()
+(1, {'testapp.Table_New': 1})
+>>>
+>>> Table_New.objects.count()
+4
+>>>
+>>> len(Table_New.objects.all())
+4
+>>>
